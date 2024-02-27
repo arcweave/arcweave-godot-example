@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://badc1jnpb044s"
+path.s3tc="res://.godot/imported/coarse-loose-fabric_normal-ogl.png-28818a9d52561f600234d1eb563696a8.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://assets/textures/cotton-fabric freepbr_com/coarse-loose-fabric_normal-ogl.png"
+dest_files=["res://.godot/imported/coarse-loose-fabric_normal-ogl.png-28818a9d52561f600234d1eb563696a8.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://assets/textures/cotton-fabric freepbr_com/coarse-loose-fabric_normal-ogl.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

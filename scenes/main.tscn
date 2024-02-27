@@ -1,0 +1,730 @@
+[gd_scene load_steps=35 format=3 uid="uid://bhw5mo6gji7i"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_0hbxw"]
+[ext_resource type="Material" uid="uid://cbosvbyno84gb" path="res://resources/materials/ground.material" id="1_e6q2m"]
+[ext_resource type="Material" uid="uid://brq01iiu04x64" path="res://resources/materials/granite.material" id="2_5rgfw"]
+[ext_resource type="PackedScene" uid="uid://l3sn1yemom5c" path="res://scenes/column.tscn" id="2_vr21k"]
+[ext_resource type="PackedScene" uid="uid://4qqrhoex2ewu" path="res://scenes/player.tscn" id="4_l4luv"]
+[ext_resource type="Theme" uid="uid://welr2gi6tdge" path="res://resources/main.theme" id="5_yhmn5"]
+[ext_resource type="FontFile" uid="uid://bgmqm782t0wp1" path="res://assets/fonts/AnonymousPro-Regular.ttf" id="7_aa1p1"]
+[ext_resource type="AudioStream" uid="uid://dwl71wwef3art" path="res://assets/audio/plop.wav" id="7_c5d2n"]
+[ext_resource type="PackedScene" uid="uid://dobkks16picr2" path="res://scenes/npc.tscn" id="7_uskt4"]
+[ext_resource type="Texture2D" uid="uid://c52ctyy2cwf6g" path="res://assets/textures/cotton-fabric freepbr_com/coarse-loose-fabric_albedo.png" id="11_5bpyt"]
+[ext_resource type="Texture2D" uid="uid://f4js20evovla" path="res://assets/textures/cotton-fabric freepbr_com/coarse-loose-fabric_ao.png" id="12_5na2v"]
+[ext_resource type="Texture2D" uid="uid://cm47n0b80057x" path="res://assets/textures/cotton-fabric freepbr_com/coarse-loose-fabric_height.png" id="13_pt1nt"]
+[ext_resource type="Texture2D" uid="uid://dvlpgaskoywcm" path="res://assets/textures/cotton-fabric freepbr_com/coarse-loose-fabric_metallic.png" id="14_btix0"]
+[ext_resource type="Texture2D" uid="uid://badc1jnpb044s" path="res://assets/textures/cotton-fabric freepbr_com/coarse-loose-fabric_normal-ogl.png" id="15_53ti3"]
+[ext_resource type="Script" path="res://addons/arcweave/Editor/ArcweaveNode.cs" id="16_7t6ki"]
+[ext_resource type="Texture2D" uid="uid://6d30ji405kgc" path="res://assets/textures/cotton-fabric freepbr_com/coarse-loose-fabric_roughness.png" id="16_nfefi"]
+[ext_resource type="Resource" uid="uid://d0brlsjomakt2" path="res://resources/arcweave-res/story.tres" id="17_a20fk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_scnqf"]
+sky_horizon_color = Color(0.121569, 0.12549, 0.129412, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_f5f3f"]
+sky_material = SubResource("ProceduralSkyMaterial_scnqf")
+
+[sub_resource type="Environment" id="Environment_xmuqd"]
+sky = SubResource("Sky_f5f3f")
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(1, 1, 1, 1)
+fog_density = 0.001
+
+[sub_resource type="BoxMesh" id="BoxMesh_vegfy"]
+material = ExtResource("1_e6q2m")
+size = Vector3(1000, 1, 1000)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1mik1"]
+size = Vector3(1000, 1, 1000)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kto1x"]
+material = ExtResource("2_5rgfw")
+size = Vector3(15, 0.25, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2f04x"]
+size = Vector3(15, 0.25, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6hx5p"]
+material = ExtResource("2_5rgfw")
+size = Vector3(14.5, 0.25, 9.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vs448"]
+size = Vector3(14.5, 0.25, 9.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asy86"]
+bg_color = Color(0.0117647, 0.00392157, 0.00392157, 0.768627)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfhko"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j43lg"]
+bg_color = Color(0.247059, 0.513726, 0.305882, 1)
+
+[sub_resource type="Animation" id="Animation_q10nw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_rkrtf"]
+resource_name = "fade_out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ucjos"]
+_data = {
+"RESET": SubResource("Animation_q10nw"),
+"fade_out": SubResource("Animation_rkrtf")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uaf41"]
+bg_color = Color(1, 1, 1, 0.109804)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dltk6"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("11_5bpyt")
+metallic = 1.0
+metallic_texture = ExtResource("14_btix0")
+roughness_texture = ExtResource("16_nfefi")
+normal_enabled = true
+normal_texture = ExtResource("15_53ti3")
+ao_enabled = true
+ao_texture = ExtResource("12_5na2v")
+heightmap_enabled = true
+heightmap_texture = ExtResource("13_pt1nt")
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_0hbxw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.916216, -0.338657, 0.214148, 4.27531e-09, 0.534456, 0.845197, -0.400685, 0.774383, -0.489677, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xmuqd")
+
+[node name="Map" type="Node3D" parent="."]
+
+[node name="Ground" type="StaticBody3D" parent="Map"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_vegfy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_1mik1")
+
+[node name="TempleRuins" type="Node3D" parent="Map"]
+
+[node name="BaseDown" type="StaticBody3D" parent="Map/TempleRuins"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/TempleRuins/BaseDown"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+mesh = SubResource("BoxMesh_kto1x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/TempleRuins/BaseDown"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+shape = SubResource("BoxShape3D_2f04x")
+
+[node name="BaseUp" type="StaticBody3D" parent="Map/TempleRuins"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/TempleRuins/BaseUp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+mesh = SubResource("BoxMesh_6hx5p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/TempleRuins/BaseUp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+shape = SubResource("BoxShape3D_vs448")
+
+[node name="Column1" parent="Map/TempleRuins" instance=ExtResource("2_vr21k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.754, 3.5)
+
+[node name="Column2" parent="Map/TempleRuins" instance=ExtResource("2_vr21k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.754, 3.5)
+
+[node name="Column3" parent="Map/TempleRuins" instance=ExtResource("2_vr21k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.754, 3.5)
+
+[node name="Column4" parent="Map/TempleRuins" instance=ExtResource("2_vr21k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.754, 3.5)
+
+[node name="Column5" parent="Map/TempleRuins" instance=ExtResource("2_vr21k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.754, -3.5)
+
+[node name="Column6" parent="Map/TempleRuins" instance=ExtResource("2_vr21k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.754, -3.5)
+
+[node name="Column7" parent="Map/TempleRuins" instance=ExtResource("2_vr21k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.754, -3.5)
+
+[node name="Column8" parent="Map/TempleRuins" instance=ExtResource("2_vr21k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.754, -3.5)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("5_yhmn5")
+metadata/_edit_lock_ = true
+
+[node name="CharacterInfo" type="Control" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="UI/CharacterInfo"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -128.0
+offset_right = 568.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="CharacterKeys" type="RichTextLabel" parent="UI/CharacterInfo"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 88.0
+offset_top = -120.0
+offset_right = 176.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[b]Name[/b]:"
+
+[node name="CharacterValues" type="RichTextLabel" parent="UI/CharacterInfo"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 176.0
+offset_top = -120.0
+offset_right = 560.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+
+[node name="HealthBar" type="ProgressBar" parent="UI/CharacterInfo"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -72.0
+offset_right = 568.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_asy86")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bfhko")
+step = 1.0
+
+[node name="Dialogue" type="Control" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Avatar" type="TextureRect" parent="UI/Dialogue"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 128.0
+offset_top = -584.0
+offset_right = 384.0
+offset_bottom = -328.0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+
+[node name="DialoguePanel" type="Panel" parent="UI/Dialogue"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -312.0
+offset_top = -584.0
+offset_right = 64.0
+offset_bottom = -456.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Content" type="RichTextLabel" parent="UI/Dialogue"]
+custom_minimum_size = Vector2(360, 112)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -304.0
+offset_top = -576.0
+offset_right = 56.0
+offset_bottom = -464.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+bbcode_enabled = true
+
+[node name="OptionsContainer" type="VBoxContainer" parent="UI/Dialogue"]
+custom_minimum_size = Vector2(432, 128)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = -576.0
+offset_right = 504.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Settings" type="Control" parent="UI"]
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="UI/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = -64.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="WelcomeText" type="RichTextLabel" parent="UI/Settings"]
+layout_mode = 2
+offset_left = 72.0
+offset_top = 72.0
+offset_right = 1080.0
+offset_bottom = 120.0
+bbcode_enabled = true
+text = "[center]Welcome to this demo featuring the Arcweave plugin for Godot 4."
+
+[node name="GridContainer" type="GridContainer" parent="UI/Settings"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 112.0
+offset_right = 1064.0
+offset_bottom = 217.0
+theme_override_constants/h_separation = 8
+columns = 2
+
+[node name="APILabel" type="Label" parent="UI/Settings/GridContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+tooltip_text = "Insert API Token of the Arcweave project's owner."
+mouse_filter = 1
+text = "API Token:"
+
+[node name="APILineEdit" type="LineEdit" parent="UI/Settings/GridContainer"]
+custom_minimum_size = Vector2(712, 0)
+layout_mode = 2
+
+[node name="HashLabel" type="Label" parent="UI/Settings/GridContainer"]
+layout_mode = 2
+tooltip_text = "Insert Arcweave project's hash."
+mouse_filter = 1
+text = "Project Hash:"
+
+[node name="HashLineEdit" type="LineEdit" parent="UI/Settings/GridContainer"]
+layout_mode = 2
+
+[node name="ProjectNameKeyLabel" type="Label" parent="UI/Settings/GridContainer"]
+layout_mode = 2
+tooltip_text = "Insert Arcweave project's hash."
+mouse_filter = 1
+text = "Project Name:"
+
+[node name="ProjectNameValueLabel" type="Label" parent="UI/Settings/GridContainer"]
+layout_mode = 2
+tooltip_text = "Insert Arcweave project's hash."
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("7_aa1p1")
+text = "---"
+
+[node name="DataButtons" type="HBoxContainer" parent="UI/Settings"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 232.0
+offset_right = 1064.0
+offset_bottom = 272.0
+alignment = 1
+
+[node name="FetchButton" type="Button" parent="UI/Settings/DataButtons"]
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+tooltip_text = "Fetch Arcweave data using the displayed API Token and Project Hash."
+text = "FETCH Project Data"
+
+[node name="SaveAPIButton" type="Button" parent="UI/Settings/DataButtons"]
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+tooltip_text = "Save displayed API Token
+& Project Hash to local drive."
+text = "SAVE API Token & Hash"
+
+[node name="SettingsKeys" type="HBoxContainer" parent="UI/Settings"]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 296.0
+offset_right = 958.0
+offset_bottom = 488.0
+
+[node name="SettingsText2" type="RichTextLabel" parent="UI/Settings/SettingsKeys"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]PLAYER SETTINGS[/b]
+[b]WALK[/b]:
+[b]RUN[/b]:
+[b]JUMP/TALK[/b]:
+[b]CAMERA PAN[/b]:
+[b]SETTINGS ON/OFF[/b]:"
+
+[node name="SettingsText3" type="RichTextLabel" parent="UI/Settings/SettingsKeys"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "
+ARROW KEYS
+SHIFT + WALK
+SPACE / ENTER / MOUSE CLICK
+MOUSE MOVEMENT
+ESC"
+
+[node name="PlayButtons" type="HBoxContainer" parent="UI/Settings"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 496.0
+offset_right = 896.0
+offset_bottom = 536.0
+alignment = 1
+
+[node name="RestartButton" type="Button" parent="UI/Settings/PlayButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+tooltip_text = "Restart the game."
+text = "RESTART"
+
+[node name="PlayButton2" type="Button" parent="UI/Settings/PlayButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+tooltip_text = "Return to the game."
+text = "PLAY"
+
+[node name="QuitButton2" type="Button" parent="UI/Settings/PlayButtons"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+tooltip_text = "Quit the game."
+text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="UI/Settings"]
+stream = ExtResource("7_c5d2n")
+
+[node name="UpdateNotification" type="Control" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="UI/UpdateNotification"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -208.0
+offset_top = 8.0
+offset_right = 208.0
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j43lg")
+
+[node name="Label" type="Label" parent="UI/UpdateNotification"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 16.0
+offset_right = 128.0
+offset_bottom = 47.0
+grow_horizontal = 2
+text = "Project Up To Date!"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/UpdateNotification"]
+libraries = {
+"": SubResource("AnimationLibrary_ucjos")
+}
+
+[node name="Inventory" type="Control" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OuterPanel" type="Panel" parent="UI/Inventory"]
+custom_minimum_size = Vector2(112, 384)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -456.0
+offset_right = 120.0
+offset_bottom = -72.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="InnerPanel" type="Panel" parent="UI/Inventory"]
+custom_minimum_size = Vector2(96, 336)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -448.0
+offset_right = 112.0
+offset_bottom = -104.0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uaf41")
+
+[node name="InventoryContainer" type="VBoxContainer" parent="UI/Inventory"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -448.0
+offset_right = 208.0
+offset_bottom = 224.0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 64
+alignment = 2
+
+[node name="ItemsLabel" type="Label" parent="UI/Inventory"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 544.0
+offset_right = 120.0
+offset_bottom = 575.0
+text = "Items"
+horizontal_alignment = 1
+
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="Wanda" parent="Characters" instance=ExtResource("7_uskt4")]
+transform = Transform3D(-0.684293, 0, 0.729208, 0, 1, 0, -0.729208, 0, -0.684293, -6.099, -0.02, -11.946)
+obj_id = "WANDA"
+is_healthy = false
+
+[node name="Skeleton3D" parent="Characters/Wanda/Dummy/Armature" index="0"]
+bones/0/position = Vector3(0.205543, -86.1923, -11.5067)
+bones/0/rotation = Quaternion(-0.995676, 0.0650186, -0.0661374, -0.00526233)
+bones/1/rotation = Quaternion(-0.0735795, -0.0449937, -0.0581888, 0.994573)
+bones/2/rotation = Quaternion(-0.00486555, -0.0102384, 0.000216821, 0.999936)
+bones/3/rotation = Quaternion(0.00819506, -0.0103124, 0.000422115, 0.999913)
+bones/4/rotation = Quaternion(0.0319694, 0.00647017, -0.0250239, 0.999155)
+bones/5/rotation = Quaternion(0.144963, -0.0109509, -0.0302994, 0.988912)
+bones/7/rotation = Quaternion(-0.459513, 0.578042, -0.51744, -0.432401)
+bones/8/position = Vector3(-1.26925e-06, 10.8382, -7.51524e-06)
+bones/8/rotation = Quaternion(0.113276, -0.431108, -0.0764055, 0.891895)
+bones/9/position = Vector3(1.19415e-05, 27.8415, -1.20221e-05)
+bones/9/rotation = Quaternion(3.28538e-08, 7.77548e-08, -0.16545, 0.986218)
+bones/10/position = Vector3(2.91207e-05, 28.3288, -8.81258e-06)
+bones/10/rotation = Quaternion(-0.116894, 0.144654, 0.124326, 0.974656)
+bones/11/rotation = Quaternion(0.389924, -0.0377479, 0.111167, 0.913333)
+bones/12/position = Vector3(-5.36962e-06, 4.18899, 1.33247e-05)
+bones/12/rotation = Quaternion(0.0184568, -0.00621476, 0.00546379, 0.999795)
+bones/13/position = Vector3(2.76707e-06, 3.41626, -1.0165e-05)
+bones/13/rotation = Quaternion(0.00322671, -0.0295924, -0.216776, 0.975767)
+bones/15/position = Vector3(2.25984, 9.10828, 0.517852)
+bones/15/rotation = Quaternion(0.280302, -0.0408557, 0.164585, 0.944814)
+bones/16/rotation = Quaternion(0.112778, 3.56149e-07, 0.0137455, 0.993525)
+bones/17/rotation = Quaternion(0.0881985, -4.13483e-07, 0.0107482, 0.996045)
+bones/19/position = Vector3(-2.47416e-05, 9.5325, 2.55091e-05)
+bones/19/rotation = Quaternion(0.138157, -0.0186127, 0.13652, 0.98078)
+bones/20/position = Vector3(1.83265e-06, 3.70002, -7.76212e-06)
+bones/20/rotation = Quaternion(0.142012, 1.30674e-08, 0.0173077, 0.989714)
+bones/21/rotation = Quaternion(0.129267, -0.107053, 0.00169404, 0.985813)
+bones/23/rotation = Quaternion(0.105357, -0.0130302, 0.121452, 0.986904)
+bones/24/rotation = Quaternion(0.125873, 2.08963e-07, 0.0153411, 0.991928)
+bones/25/rotation = Quaternion(0.144512, -0.130727, -0.00162287, 0.980828)
+bones/26/position = Vector3(2.59191e-06, 2.63881, -7.02033e-06)
+bones/27/position = Vector3(-3.80628, 8.07667, 0.486697)
+bones/27/rotation = Quaternion(0.0444003, -0.00633568, 0.114712, 0.992386)
+bones/28/rotation = Quaternion(0.0990282, 1.45491e-07, 0.0120689, 0.995011)
+bones/29/position = Vector3(6.41211e-06, 2.09999, 7.42632e-07)
+bones/29/rotation = Quaternion(0.0961026, -2.98316e-07, 0.0117116, 0.995303)
+bones/31/rotation = Quaternion(0.455201, 0.581032, -0.505649, 0.446669)
+bones/32/position = Vector3(1.65484e-07, 10.8377, 4.41589e-06)
+bones/32/rotation = Quaternion(0.120595, 0.44183, 0.0758034, 0.885719)
+bones/33/rotation = Quaternion(5.34718e-07, -9.4517e-08, 0.163037, 0.98662)
+bones/34/rotation = Quaternion(-0.013769, 0.0254435, -0.102478, 0.994314)
+bones/35/position = Vector3(-2.68174, 2.46615, 1.5762)
+bones/35/rotation = Quaternion(0.287638, -0.030301, 0.0683088, 0.95482)
+bones/36/rotation = Quaternion(0.0126956, 0.00588597, -0.00378339, 0.999895)
+bones/37/position = Vector3(3.90526e-06, 3.4184, 6.79039e-06)
+bones/37/rotation = Quaternion(-0.02886, 0.0021144, 0.0196557, 0.999388)
+bones/38/position = Vector3(8.64011e-06, 2.58059, -1.42496e-05)
+bones/39/position = Vector3(-2.25987, 9.1093, 0.518038)
+bones/39/rotation = Quaternion(0.261571, 0.0167541, -0.0914695, 0.960694)
+bones/40/position = Vector3(-1.88881e-06, 3.69999, -3.35162e-07)
+bones/40/rotation = Quaternion(7.11452e-07, 9.52266e-08, 3.94641e-07, 1)
+bones/41/position = Vector3(-1.00331e-05, 2.85, 1.34393e-06)
+bones/41/rotation = Quaternion(-0.0572051, 2.53632e-09, 0.00690346, 0.998339)
+bones/43/position = Vector3(-3.11998e-05, 9.5334, -3.88561e-05)
+bones/43/rotation = Quaternion(0.133659, 0.00508031, -0.0524949, 0.989623)
+bones/44/position = Vector3(5.56737e-06, 3.7, 1.51823e-05)
+bones/44/rotation = Quaternion(1.83372e-06, 1.87174e-07, 9.35854e-07, 1)
+bones/45/rotation = Quaternion(-0.0411572, -1.91719e-07, 0.00496613, 0.99914)
+bones/47/position = Vector3(1.86509, 9.10453, 0.0430296)
+bones/47/rotation = Quaternion(-0.00032157, 0.000687592, -0.0772415, 0.997012)
+bones/48/position = Vector3(-1.22269e-05, 3.15, 7.88214e-06)
+bones/48/rotation = Quaternion(2.91458e-06, 8.37486e-09, -4.11482e-08, 1)
+bones/51/position = Vector3(3.80626, 8.07777, 0.486882)
+bones/51/rotation = Quaternion(0.0308548, 0.00529725, -0.120422, 0.992229)
+bones/52/position = Vector3(1.48666e-05, 3.59999, -1.14689e-05)
+bones/52/rotation = Quaternion(0.00427285, -6.3799e-06, 0.0353937, 0.999364)
+bones/53/position = Vector3(-5.48448e-08, 2.10001, -4.80592e-06)
+bones/53/rotation = Quaternion(0.0377745, 6.08951e-07, -0.0045573, 0.999276)
+bones/55/rotation = Quaternion(-0.148078, 0.0344163, 0.963802, 0.219029)
+bones/56/rotation = Quaternion(-0.0667047, 0.0538278, -0.00415125, 0.996311)
+bones/57/rotation = Quaternion(0.167231, 0.0582175, 0.053238, 0.982756)
+bones/58/rotation = Quaternion(0.298629, -7.81581e-08, -1.41206e-07, 0.954369)
+bones/60/rotation = Quaternion(-0.1357, 0.033955, 0.98457, -0.105146)
+bones/61/rotation = Quaternion(-0.0684029, 0.0333296, -0.00153674, 0.9971)
+bones/62/rotation = Quaternion(0.273065, -0.0840544, -0.204207, 0.936306)
+bones/63/rotation = Quaternion(0.284651, 6.49507e-08, -1.38441e-07, 0.958631)
+
+[node name="Beta_Surface" parent="Characters/Wanda/Dummy/Armature/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_dltk6")
+
+[node name="Healer" parent="Characters" instance=ExtResource("7_uskt4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.794, 0.49, 0)
+obj_id = "HEALER"
+
+[node name="Player" parent="Characters" instance=ExtResource("4_l4luv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.369, 3.00152, 0)
+obj_id = "DRAKE"
+
+[node name="ArcweaveNode" type="Node" parent="."]
+script = ExtResource("16_7t6ki")
+ArcweaveAsset = ExtResource("17_a20fk")
+
+[connection signal="pressed" from="UI/Settings/DataButtons/FetchButton" to="." method="_on_fetch_button_pressed"]
+[connection signal="pressed" from="UI/Settings/DataButtons/SaveAPIButton" to="." method="_on_save_api_button_pressed"]
+[connection signal="pressed" from="UI/Settings/PlayButtons/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UI/Settings/PlayButtons/PlayButton2" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="UI/Settings/PlayButtons/QuitButton2" to="." method="_on_quit_button_pressed"]
+[connection signal="npc_approached" from="Characters/Player" to="." method="_on_player_npc_approached"]
+[connection signal="npc_left" from="Characters/Player" to="." method="_on_player_npc_left"]
+[connection signal="ProjectUpdated" from="ArcweaveNode" to="." method="_on_arcweave_node_project_updated"]
+
+[editable path="Characters/Wanda"]
+[editable path="Characters/Wanda/Dummy"]

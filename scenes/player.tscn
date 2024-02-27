@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://4qqrhoex2ewu"]
+
+[ext_resource type="PackedScene" uid="uid://cf1v7o3jt3gbf" path="res://scenes/dummy.tscn" id="2_47y0s"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_vywh7"]
+[ext_resource type="Material" uid="uid://dgae8oh0enlka" path="res://resources/materials/plain.material" id="3_e8pkq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kwi3h"]
+radius = 0.392827
+height = 1.79672
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gwwwg"]
+height = 1.75
+radius = 1.9812
+
+[sub_resource type="SphereMesh" id="SphereMesh_68y6b"]
+material = ExtResource("3_e8pkq")
+radius = 0.873
+
+[sub_resource type="SphereMesh" id="SphereMesh_dk1f1"]
+material = ExtResource("3_e8pkq")
+
+[sub_resource type="SphereMesh" id="SphereMesh_0mrpc"]
+material = ExtResource("3_e8pkq")
+radius = 0.7
+height = 1.2
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6la3c"]
+emission_shape_scale = Vector3(0.74, -0.2, 0.59)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -49.6
+angle_max = 304.1
+spread = 27.931
+
+[sub_resource type="QuadMesh" id="QuadMesh_id2ar"]
+size = Vector2(0.03, 0.2)
+subdivide_width = 8
+subdivide_depth = 7
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("2_vywh7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.884969, 0)
+shape = SubResource("CapsuleShape3D_kwi3h")
+
+[node name="CameraArm" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999812, 0.0193719, 0, -0.0193719, 0.999812, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraArm"]
+transform = Transform3D(1, 0, 0, 0, 0.97437, 0.224951, 0, -0.224951, 0.97437, 0, 3.33, 3.33)
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+shape = SubResource("CylinderShape3D_gwwwg")
+
+[node name="Dummy" parent="." instance=ExtResource("2_47y0s")]
+
+[node name="Cloud" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.752472, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cloud"]
+transform = Transform3D(0.981488, 0.157039, 0.109635, -0.0085171, 0.607659, -0.794152, -0.191333, 0.778518, 0.597747, 0.325698, 3.68739, -0.153632)
+mesh = SubResource("SphereMesh_68y6b")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Cloud"]
+transform = Transform3D(0.981488, 0.157039, 0.109635, -0.0085171, 0.607659, -0.794152, -0.191333, 0.778518, 0.597747, -0.610015, 3.69551, 0.0287774)
+mesh = SubResource("SphereMesh_dk1f1")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Cloud"]
+transform = Transform3D(0.981488, 0.157039, 0.109635, -0.0085171, 0.607659, -0.794152, -0.191333, 0.778518, 0.597747, 0.118166, 3.86836, 0.124855)
+mesh = SubResource("SphereMesh_0mrpc")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Cloud"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.19737, 0)
+emitting = false
+amount = 12
+lifetime = 0.86
+speed_scale = 2.0
+randomness = 1.0
+visibility_aabb = AABB(-4, -0.89, 1.52783, 8, 1.161, 8)
+process_material = SubResource("ParticleProcessMaterial_6la3c")
+draw_pass_1 = SubResource("QuadMesh_id2ar")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

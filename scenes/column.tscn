@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://l3sn1yemom5c"]
+
+[ext_resource type="PackedScene" uid="uid://dkbf01emwbkn1" path="res://scenes/column_drum.tscn" id="1_fc4cp"]
+
+[node name="Column" type="Node3D"]
+
+[node name="ColumnDrum1" parent="." instance=ExtResource("1_fc4cp")]
+
+[node name="ColumnDrum2" parent="." instance=ExtResource("1_fc4cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+
+[node name="ColumnDrum3" parent="." instance=ExtResource("1_fc4cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
+
+[node name="ColumnDrum4" parent="." instance=ExtResource("1_fc4cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6, 0)
