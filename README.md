@@ -1,5 +1,7 @@
 # Arcweave Godot Example
 
+![](images/demo.gif)
+
 ## Table of Contents
 
 - Arcweave Godot Example
