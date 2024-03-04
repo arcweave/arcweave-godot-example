@@ -5,34 +5,34 @@
 - Arcweave Godot Example
 	- [Introduction](#introduction)
 	- [The Godot Project](#godot-project)
-		- [Importing & Building the Godot Project](#importing-building-godot)
-		- [Brief Exploration of the Godot Project](#exploration-godot)
+		- [Importing & Building the Godot Project](#importing--building-the-godot-project)
+		- [Brief Exploration of the Godot Project](#brief-exploration-of-the-godot-project)
 			- [Art credits](#art-credits)
 			- [Scenes](#scenes)
 			- [Scripts](#scripts)
-			- [ArcweaveAsset & ArcweaveNode](#arcweave-asset-node)
-	- [The Arcweave Project](#arcweave-project)
-		- [Recreating the Arcweave Project](#recreate)
-		- [Exploring the Arcweave Project](#explore)
-			- [Story Premise](#story)
-			- [Gameplay & Mechanics](#aw-gameplay)
+			- [ArcweaveAsset & ArcweaveNode](#arcweaveasset--arcweavenode)
+	- [The Arcweave Project](#the-arcweave-project)
+		- [Recreating the Arcweave Project](#recreating-the-arcweave-project)
+		- [Exploring the Arcweave Project](#exploring-the-arcweave-project)
+			- [Story Premise](#story-premise)
+			- [Gameplay & Mechanics](#gameplay--mechanics)
 			- [Components](#components)
 			- [Boards](#boards)
 			- [Global Variables](#global-variables)
-	- [Connecting the Two Projects](#connect)
-		- [Fetching from JSON File](#json-connect)
-		- [Fetching With WebAPI](#api-connect)
-	- [Playing the Godot Project](#playing)
-		- [Gameplay & Mechanics](#gameplay)
+	- [Connecting the Two Projects](#connecting-the-two-projects)
+		- [Fetching from JSON File](#fetching-from-json-file)
+		- [Fetching With WebAPI](#fetching-with-webapi)
+	- [Playing the Godot Project](#playing-the-godot-project)
+		- [Gameplay & Mechanics](#gameplay--mechanics-1)
 		- [Settings Menu](#settings-menu)
-	- [Runtime Story Updates](#story-updates)
-		- [How to Fetch Story Updates](#change-howto)
-		- [Testing Different Story Versions](#testing-versions)
-		- [Various Story Changes to Try](#various-changes)
-			- [Changing Dialogue](#change-dialogue)
-			- [Changing Healing Points](#change-healing)
-			- [Changing Sprite Colors](#change-colors)
-			- [Adding Inventory Items](#change-items)
+	- [Runtime Story Updates](#runtime-story-updates)
+		- [How to Fetch Story Updates](#how-to-fetch-story-updates)
+		- [Testing Different Story Versions](#testing-different-story-versions)
+		- [Various Story Changes to Try](#various-story-changes-to-try)
+			- [Changing Dialogue](#changing-dialogue)
+			- [Changing Healing Points](#changing-healing-points)
+			- [Changing Sprite Colors](#changing-sprite-colors)
+			- [Adding Inventory Items](#adding-inventory-items)
 
 
 ---
@@ -62,9 +62,9 @@ It is an official Arcweave example serving as inspiration and starting point for
 
 ---
 
-## The Godot Project {#godot-project}
+## The Godot Project
 
-### Importing & Building the Godot Project {#importing-building-godot}
+### Importing & Building the Godot Project
 
 > **Note**: the Arcweave Plugin requires the **.NET** version of **Godot Engine 4** which you can find [here](https://godotengine.org/).
 
@@ -79,9 +79,9 @@ Check that the Arcweave plugin is now enabled from **Project > Project Settings.
 
 ![](readme-images/build-reload.gif)
 
-### Brief Exploration of the Godot Project {#exploration-godot}
+### Brief Exploration of the Godot Project
 
-#### Art credits {#art-credits}
+#### Art credits
 
 Quick shout-out to the people and organisations behind the project's art:
 
@@ -103,15 +103,15 @@ The main scene has `main.gd` attached, which runs most of the game's functions, 
 
 The `player.gd` script  and `npc.gd` provide simple functionalities for the characters.
 
-#### ArcweaveAsset & ArcweaveNode {#arcweave-asset-node}
+#### ArcweaveAsset & ArcweaveNode
 
 The main scene has an **ArcweaveNode** as a child, but its attached **ArcweaveAsset** is void.
 
 Before playing the game, you must connect the Arcweave project and fetch its data into the ArcweaveAsset.
 
-## The Arcweave Project {#arcweave-project}
+## The Arcweave Project
 
-### Recreating the Arcweave Project {#recreate}
+### Recreating the Arcweave Project
 
 This game is made to be connected with Arcweave's *Game Engine Example,* a template found in the **New Project** menu.
 
@@ -122,13 +122,13 @@ To recreate the *Game Engine Example:*
 * choose **Game Engine Example**.
 
 
-### Exploring the "Game Engine Example" {#explore}
+### Exploring the Arcweave Project
 
-#### Story Premise {#story}
+#### Story Premise
 
 When an ally gets heavily wounded, the player must bring her a potion from a nearby healer.
 
-#### Gameplay & Mechanics {#aw-gameplay}
+#### Gameplay & Mechanics
 
 The player has 2 NPCs to talk to, Wanda (the wounded ally) and the healer. 
 
@@ -165,7 +165,7 @@ The Starting Board contains one starting element per NPC dialogue, with the resp
 
 > Note: in the specific game, the game engine ignores the project's Starting Element.
 
-#### Global Variables {#global-variables}
+#### Global Variables
 
 The project has 3 global variables:
 
@@ -178,11 +178,11 @@ Each one has its obvious function:
 * all variables of the structure `[obj_id]_health` are the health score of the character with the given `obj_id`. 
 * all variables of the structure `have_[some_item]` as the item's state regarding player inventory: `true` if carried and `false` if not.
 
-## Connecting the Two Projects {#connect}
+## Connecting the Two Projects
 
 There are 2 ways to fetch the data from Arcweave into our Godot project.
 
-### Fetching from JSON File (All Arcweave Accounts) {#json-connect}
+### Fetching from JSON File
 
 The first way is to export the JSON file for Godot—available to all Arcweave accounts.
 
@@ -206,7 +206,7 @@ If everything is correct, the Godot console will print *"Successfully refreshed 
 
 > **Note**: the JSON file is no longer required after initializing the ArcweaveAsset. The JSON data is then transferred to the ArcweaveAsset.
 
-### Fetching With WebAPI (Team Accounts) {#api-connect}
+### Fetching With WebAPI
 
 The second way is to fetch Arcweave data through web API—available to Team accounts only. This allows story updates with just the click of a button, during runtime, too.
 
@@ -241,9 +241,9 @@ If everything is correct, the Godot console will print *"Successfully refreshed 
 The ArcweaveAsset now contains the Arcweave project's data as a Dictionary. Click on **Project Settings**: [Dictionary (size 14)] to explore them. Everything included in the Arcweave JSON is now loaded on the ArcweaveAsset.
 
 
-## Playing the Godot Project {#playing}
+## Playing the Godot Project
 
-### Gameplay & Mechanics {#gameplay}
+### Gameplay & Mechanics
 
 The game is a very simplistic 3rd-person action RPG. The player can walk, run, and jump around a minimal setting, which includes a surreal ancient temple and 2 NPCs (Wanda and the Healer).
 
@@ -253,7 +253,7 @@ Talking to the NPC displays their **portrait**, **dialogue line**, and the playe
 
 When the healer gives the player the potion, the item appears in the **inventory panel**, disappearing when Wanda drinks it.
 
-### Settings Menu {#settings-menu}
+### Settings Menu
 
 ![](./readme-images/ui.png)
 
@@ -296,13 +296,13 @@ func _ready() -> void:
 	...
 ```
 
-## Runtime Story Updates {#story-updates}
+## Runtime Story Updates
 
 The Arcweave plugin for Godot allows data fetching during game runtime, both from within the game engine editor and the exported game.
 
 The Godot example is built to demonstrate this.
 
-### How to Fetch Story Updates {#change-howto}
+### How to Fetch Story Updates
 
 During gameplay:
 
@@ -311,27 +311,27 @@ During gameplay:
 * click on the **Fetch Project Data** button;
 * optionally, click **Restart**—probably a wise choice.
 
-### Testing Different Story Versions {#testing-versions}
+### Testing Different Story Versions
 
 A useful case of such a functionality is when you have 2 or more Arcweave projects for the same story and want to swap from one to the other. Just swap their hash codes and you can then play the other version, without leaving your game.
 
 The Settings menu displays the name of the fetched Arcweave project, so—as long as you name your versions accordingly—you know exactly what you are testing.
 
-### Various Story Changes to Try {#various-changes}
+### Various Story Changes to Try
 
 Here are some examples of ways you can influence your Godot game by changing Arcweave parameters. All of the following examples will work without extra coding in the Godot game. Simply edit your Arcweave project and then fetch from the Godot game.
 
-#### Dialogue Changes {#change-dialogue}
+#### Dialogue Changes
 
 The obvious thing you can do is change the dialogue. Any content change or conditionals will be reflected in the Godot game's dialogue.
 
-#### Changing Healing Points {#change-healing}
+#### Changing Healing Points
 
 ![](readme-images/healing-points.png)
 
 Change the points added to `wanda_health`, to change the healing potion's strength.
 
-#### Changing Sprite Colors {#change-colors}
+#### Changing Sprite Colors
 
 Change the value of the `Color` attribute in any of the characters.
 
@@ -340,7 +340,7 @@ Change the value of the `Color` attribute in any of the characters.
 You can use any of the standard HTML color names (case-insensitive, spaces allowed).
 
 
-#### Adding Inventory Items {#change-items}
+#### Adding Inventory Items
 
 There is an extra item image included among the game assets: a scroll. You can find it in the **FileSystem** at `../assets/items_icons/scroll.png`
 
