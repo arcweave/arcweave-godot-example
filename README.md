@@ -1,6 +1,6 @@
 # Arcweave Godot Example
 
-![](images/demo.gif)
+![](readme-images/demo.gif)
 
 ## Table of Contents
 
