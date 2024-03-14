@@ -9,4 +9,1013 @@ api_key = ""
 project_hash = ""
 receive_method = "File"
 _placeholder = false
-project_settings = {}
+project_settings = {
+"assets": {
+"190e9e72-32e9-4c51-adbb-dbad343134fc": {
+"name": "player.png",
+"type": "template-image"
+},
+"4de16200-4175-4aff-b753-3d40ff849289": {
+"name": "healer.png",
+"type": "template-image"
+},
+"647d0495-341f-42b2-8788-b47dace22bf8": {
+"children": ["4de16200-4175-4aff-b753-3d40ff849289", "190e9e72-32e9-4c51-adbb-dbad343134fc", "fd70f4a4-578f-442f-9e5c-78872289818f"],
+"root": true
+},
+"fd70f4a4-578f-442f-9e5c-78872289818f": {
+"name": "wanda.png",
+"type": "template-image"
+}
+},
+"attributes": {
+"11006864-6f66-4c2c-a3b7-d3fae8febc42": {
+"cId": "5265ceac-f13f-47fc-a02c-6eda7eea6b90",
+"cType": "elements",
+"name": "tag",
+"value": {
+"data": "dialogue_start",
+"plain": true,
+"type": "string"
+}
+},
+"1ac75bb2-05e9-46e4-8278-74550fb55f1d": {
+"cId": "50ba3de5-f14b-4703-9e2e-c0b2ccb9d407",
+"cType": "elements",
+"name": "tag",
+"value": {
+"data": "dialogue_end",
+"plain": true,
+"type": "string"
+}
+},
+"22780ff3-64a2-40e8-a2e4-e753809c020a": {
+"cId": "3846c37c-07a1-4c04-98e2-26cd026295d1",
+"cType": "components",
+"name": "obj_id",
+"value": {
+"data": "DRAKE",
+"plain": true,
+"type": "string"
+}
+},
+"3701ac1c-4d2d-4418-8ab6-4b773cfe98d9": {
+"cId": "647349ca-9ebb-4d5f-b81e-500761ec1c5a",
+"cType": "components",
+"name": "obj_id",
+"value": {
+"data": "WANDA",
+"plain": true,
+"type": "string"
+}
+},
+"45a15656-47e5-463a-a3ed-c508965e6010": {
+"cId": "d852a577-bd1f-44cf-8187-77a86f97baef",
+"cType": "elements",
+"name": "tag",
+"value": {
+"data": "dialogue_end",
+"plain": true,
+"type": "string"
+}
+},
+"4804bbd8-32c0-4c5e-8905-35c17f0b948f": {
+"cId": "647349ca-9ebb-4d5f-b81e-500761ec1c5a",
+"cType": "components",
+"name": "Race",
+"value": {
+"data": "<p>Half-elf</p>",
+"type": "string"
+}
+},
+"4adffe26-5221-4dcd-b611-80f372469a13": {
+"cId": "3893f5e9-d85e-4e5b-9423-e02ac03eb34f",
+"cType": "elements",
+"name": "tag",
+"value": {
+"data": "dialogue_end",
+"plain": true,
+"type": "string"
+}
+},
+"50e58bbc-9084-4b14-81f1-173393835d5e": {
+"cId": "5feea546-dde8-4445-b8a1-29194c6ff0d5",
+"cType": "components",
+"name": "Weather",
+"value": {
+"data": "Clear",
+"plain": true,
+"type": "string"
+}
+},
+"5efdbbc2-5a4d-4fb9-bb9b-994e1b4bb35c": {
+"cId": "82820a96-708d-4a05-b2aa-21e8d582d5de",
+"cType": "components",
+"name": "obj_id",
+"value": {
+"data": "HEALER",
+"plain": true,
+"type": "string"
+}
+},
+"5f504b6a-8dfd-4a32-b1b2-e45cb1772e8a": {
+"cId": "3846c37c-07a1-4c04-98e2-26cd026295d1",
+"cType": "components",
+"name": "Race",
+"value": {
+"data": "Human",
+"plain": true,
+"type": "string"
+}
+},
+"8b411368-82b1-4166-a308-f2ffeed71a4e": {
+"cId": "5feea546-dde8-4445-b8a1-29194c6ff0d5",
+"cType": "components",
+"name": "Time",
+"value": {
+"data": "Day",
+"plain": true,
+"type": "string"
+}
+},
+"8db5417a-26ff-4c99-b8de-f7e3f911608b": {
+"cId": "a690068b-49db-44ee-94ca-ebf4627c8141",
+"cType": "elements",
+"name": "tag",
+"value": {
+"data": "dialogue_end",
+"plain": true,
+"type": "string"
+}
+},
+"955b9b0d-372a-45d9-a68f-33ddfebf2bf6": {
+"cId": "ddc209cc-7832-4ff6-ae1f-4eea592d07d4",
+"cType": "elements",
+"name": "tag",
+"value": {
+"data": "dialogue_start",
+"plain": true,
+"type": "string"
+}
+},
+"96cefbf8-2c24-424c-9538-3533e52d38c6": {
+"cId": "82820a96-708d-4a05-b2aa-21e8d582d5de",
+"cType": "components",
+"name": "Race",
+"value": {
+"data": "Human",
+"plain": true,
+"type": "string"
+}
+},
+"978e009a-3a8d-4c7a-b669-d2a3b50c1fa8": {
+"cId": "62d0eaea-ccd4-4020-8bf9-7b00c7397684",
+"cType": "elements",
+"name": "tag",
+"value": {
+"data": "dialogue_end",
+"plain": true,
+"type": "string"
+}
+},
+"9cd31ce5-e6b2-4723-9b67-7c2a051b6a6a": {
+"cId": "dbbbec36-4a9c-4cad-8533-c9f421a5093d",
+"cType": "elements",
+"name": "tag",
+"value": {
+"data": "dialogue_end",
+"plain": true,
+"type": "string"
+}
+},
+"9d863621-49d6-4f34-a893-20dd24645345": {
+"cId": "3846c37c-07a1-4c04-98e2-26cd026295d1",
+"cType": "components",
+"name": "Color",
+"value": {
+"data": "Brown",
+"plain": true,
+"type": "string"
+}
+},
+"a15b1c0d-c674-4b42-99a2-659d9bfcc049": {
+"cId": "647349ca-9ebb-4d5f-b81e-500761ec1c5a",
+"cType": "components",
+"name": "Color",
+"value": {
+"data": "Blue",
+"plain": true,
+"type": "string"
+}
+},
+"b36b6cc2-7dab-4582-b420-7e470ceb90d4": {
+"cId": "82820a96-708d-4a05-b2aa-21e8d582d5de",
+"cType": "components",
+"name": "Color",
+"value": {
+"data": "Red",
+"plain": true,
+"type": "string"
+}
+},
+"ce8c0b5f-c6bc-410f-8f23-7831c2f5a4c4": {
+"cId": "e14fa106-d418-4935-ab44-0de013995605",
+"cType": "elements",
+"name": "tag",
+"value": {
+"data": "dialogue_end",
+"plain": true,
+"type": "string"
+}
+},
+"eac1cd3b-d6ad-41a1-b2cd-f1734e8c46e3": {
+"cId": "5feea546-dde8-4445-b8a1-29194c6ff0d5",
+"cType": "components",
+"name": "Acceptable Values",
+"value": {
+"data": "<p>Time: <strong>Day</strong> or <strong>Night</strong></p><p>Weather: <strong>Clear</strong> or <strong>Rain</strong></p>",
+"type": "string"
+}
+}
+},
+"boards": {
+"1c11fa2a-f76c-4be7-aac4-6bf92a63240f": {
+"branches": ["bce80b17-0165-41a2-a29d-e814f6e9f110"],
+"connections": ["57572c19-ca11-4223-bdb7-718971ef7951", "90872a7c-0f63-472b-8330-a6b14d824aeb", "9b1224a4-5546-4f81-96c7-a1865c618291", "cb3312b7-33b5-43fa-97c9-4f0b7eced680", "0879ddb5-e1a2-4b95-a28c-d4df8df845e9", "bc517d71-2899-4d3c-9c92-e72ca2b00174", "cff4ab38-b38b-4aca-981e-c1e04561421b", "993d8d9a-ff84-48eb-b531-7b9b2d37cb91", "c6932ce2-0e49-4f25-8595-6432208338c2", "008e74f9-5c23-4111-838e-44b4121db526"],
+"elements": ["540d5fc7-aa78-4b1a-8c11-bc2d4dc24ba9", "ddc209cc-7832-4ff6-ae1f-4eea592d07d4", "d852a577-bd1f-44cf-8187-77a86f97baef", "e14fa106-d418-4935-ab44-0de013995605", "a8965b1b-4841-427e-8cf5-d8eda2f59bf2", "9c3607e5-4fb7-49db-ac8d-ccd7a1bf6d56", "3893f5e9-d85e-4e5b-9423-e02ac03eb34f"],
+"jumpers": ["49be178c-30a9-4160-b065-1a72e3626a65"],
+"name": "Healer Dialogue",
+"notes": ["034133c4-42d2-45af-9db6-351eadfd5a1e", "3701967c-5c90-4474-8838-39d634d1ebf7"]
+},
+"2ad15ff6-f2ba-4f1d-9d9d-68938c683d7e": {
+"children": ["449db8e2-4a21-4a73-aece-f0435e7319fb", "733b1cc4-6d51-4ad6-9fba-444b4f2d98f3"],
+"name": "Root",
+"root": true
+},
+"449db8e2-4a21-4a73-aece-f0435e7319fb": {
+"branches": [],
+"connections": ["da4e52f1-34f6-4cd8-90de-abf7c24c648a", "27fb996a-efe4-45fd-adae-7e63827b2ce5", "d6934b95-7e92-4323-bdd5-35d6a70683fa", "a89eea4c-0498-419e-9b21-1ce8ddd706bf"],
+"customId": "starting_dialogue_elements",
+"elements": ["9cde645d-6e9e-492b-9103-a65b60dcfd9a", "e7204f2d-842a-4ab4-8aa6-349e441e4935", "5bb43181-eebd-40b8-9561-2e58223c6016"],
+"jumpers": ["2480e3fc-bfe3-49a6-a32d-a5ea4c9c5a22", "ae78f3a6-dea3-45a5-935f-bbb45825043e"],
+"name": "Starting Board",
+"notes": ["efda66b1-9841-4a02-a4d2-0d782430726b", "43cf8efd-f69f-421b-b65e-227b0b29a37f"]
+},
+"733b1cc4-6d51-4ad6-9fba-444b4f2d98f3": {
+"children": ["ef8116b9-c38d-473d-9c0a-600bc37a010d", "1c11fa2a-f76c-4be7-aac4-6bf92a63240f"],
+"name": "Dialogues"
+},
+"ef8116b9-c38d-473d-9c0a-600bc37a010d": {
+"branches": ["0d845415-33d5-4486-9514-32b88e17e6b2", "b16dc6eb-d3f3-40da-b00a-3c71b17ed257", "5d6f37af-3b82-484b-a3c9-5802db1c575f", "c995129b-2d4e-4c01-8f3d-ad66914ee2a1"],
+"connections": ["8a89cabd-7542-48db-b501-3c0019145989", "6cb7b540-1bb4-4eac-88ae-bfd8e7703013", "62a9e84c-9652-4636-a796-73a75488bb79", "2b9d43d7-6eee-42d0-82ae-dcd08a897130", "9327955d-269b-4c52-8c93-3172f7b4f721", "325f3cda-c786-4259-b95b-e09a399c58fd", "55f77cc3-8c0f-4ff5-b020-2098736aef4d", "3b190ec6-1525-484f-aa4f-5422ff176288", "02dfbe78-ae86-4525-8af9-51a54d58193b", "b7c621dc-9c04-4e58-b59a-395521ecb171", "e2c7e296-ab05-49f8-9247-e9a3b33dd6e9", "929b7bfd-ff9a-471f-ba1b-a5ace253c5f4", "4a58bb7e-43b4-4cc9-9a84-9c05618ad8ac", "a8cf1f72-a10e-44ca-b026-86895f7bcc40", "4fd2cc78-c8ff-48fd-bcbc-b0e8c42f857d", "60df4786-8a65-46ee-a3e9-1df36a5e1f39", "d334c938-ed9e-4869-8307-1dc3a2a1149f", "542a8cf5-54fe-42ea-8b23-694dee1106da"],
+"elements": ["dbbbec36-4a9c-4cad-8533-c9f421a5093d", "5265ceac-f13f-47fc-a02c-6eda7eea6b90", "50ba3de5-f14b-4703-9e2e-c0b2ccb9d407", "63bee155-1348-4b82-a52d-24c96143c9db", "045ab2b6-6d77-43f7-a7b4-e275f41667c3", "4d7d2516-68e0-450c-a580-65c0b2616965", "62d0eaea-ccd4-4020-8bf9-7b00c7397684", "a690068b-49db-44ee-94ca-ebf4627c8141", "61b54b64-7376-4b5e-ae0d-cc1b390e16b7", "be67a949-dd00-4460-98c9-45067f0d331f"],
+"jumpers": ["7a7524ef-e636-4baa-99ae-582efdd902b0", "d7f26011-d6d6-4c92-aa3b-3a074ff647aa", "28e3009a-e164-4679-92c3-977615b1eb4b", "895bcae0-a11a-4d57-8cdc-82d8f95f75a6"],
+"name": "Wanda Dialogue",
+"notes": ["d974242a-a65d-4bd6-8670-24c6b02a487f", "94049948-836b-436d-9105-61a87595fb35"]
+}
+},
+"branches": {
+"0d845415-33d5-4486-9514-32b88e17e6b2": {
+"conditions": {
+"ifCondition": "f8e12e95-43b7-4d42-9844-5402665b24ef"
+},
+"theme": "moss",
+"x": 10780.0,
+"y": 10400.0
+},
+"5d6f37af-3b82-484b-a3c9-5802db1c575f": {
+"conditions": {
+"elseCondition": "48d4095c-c6d2-4009-b68e-9ce92a61edd1",
+"ifCondition": "d9854a9f-617f-4d0f-8ccf-42f2e0419c36"
+},
+"theme": "default",
+"x": 10800.0,
+"y": 10700.0
+},
+"b16dc6eb-d3f3-40da-b00a-3c71b17ed257": {
+"conditions": {
+"ifCondition": "023d7f8c-413a-4643-8408-af6501c2cdff"
+},
+"theme": "moss",
+"x": 11760.0,
+"y": 10780.0
+},
+"bce80b17-0165-41a2-a29d-e814f6e9f110": {
+"conditions": {
+"elseCondition": "d24a6cbe-85fb-4059-8867-fa8ba0af6aa0",
+"ifCondition": "66acc3a7-454a-43db-a923-1b0d3cb17805"
+},
+"theme": "default",
+"x": 10580.0,
+"y": 10740.0
+},
+"c995129b-2d4e-4c01-8f3d-ad66914ee2a1": {
+"conditions": {
+"ifCondition": "462433eb-bc14-49df-af13-91c19e63b65c"
+},
+"theme": "gold",
+"x": 10780.0,
+"y": 11220.0
+}
+},
+"components": {
+"036db898-0cb9-4a29-b19d-3e8f3288d9a2": {
+"children": ["3846c37c-07a1-4c04-98e2-26cd026295d1", "647349ca-9ebb-4d5f-b81e-500761ec1c5a", "82820a96-708d-4a05-b2aa-21e8d582d5de"],
+"name": "Characters"
+},
+"3846c37c-07a1-4c04-98e2-26cd026295d1": {
+"assets": {
+"cover": {
+"id": "190e9e72-32e9-4c51-adbb-dbad343134fc"
+}
+},
+"attributes": ["9d863621-49d6-4f34-a893-20dd24645345", "5f504b6a-8dfd-4a32-b1b2-e45cb1772e8a", "22780ff3-64a2-40e8-a2e4-e753809c020a"],
+"name": "Drake Miles"
+},
+"5feea546-dde8-4445-b8a1-29194c6ff0d5": {
+"assets": {
+"cover": {
+"file": "delapouite/sun-cloud",
+"type": "icon"
+}
+},
+"attributes": ["8b411368-82b1-4166-a308-f2ffeed71a4e", "50e58bbc-9084-4b14-81f1-173393835d5e", "eac1cd3b-d6ad-41a1-b2cd-f1734e8c46e3"],
+"name": "Environment"
+},
+"647349ca-9ebb-4d5f-b81e-500761ec1c5a": {
+"assets": {
+"cover": {
+"id": "fd70f4a4-578f-442f-9e5c-78872289818f"
+}
+},
+"attributes": ["a15b1c0d-c674-4b42-99a2-659d9bfcc049", "4804bbd8-32c0-4c5e-8905-35c17f0b948f", "3701ac1c-4d2d-4418-8ab6-4b773cfe98d9"],
+"name": "Wanda Elandor"
+},
+"65005bda-15d0-41c5-867f-68c118829f08": {
+"children": ["036db898-0cb9-4a29-b19d-3e8f3288d9a2", "e175e706-97ec-42a8-8791-7855b29396e7"],
+"name": "Root",
+"root": true
+},
+"82820a96-708d-4a05-b2aa-21e8d582d5de": {
+"assets": {
+"cover": {
+"id": "4de16200-4175-4aff-b753-3d40ff849289"
+}
+},
+"attributes": ["b36b6cc2-7dab-4582-b420-7e470ceb90d4", "96cefbf8-2c24-424c-9538-3533e52d38c6", "5efdbbc2-5a4d-4fb9-bb9b-994e1b4bb35c"],
+"name": "Healer"
+},
+"e175e706-97ec-42a8-8791-7855b29396e7": {
+"children": ["5feea546-dde8-4445-b8a1-29194c6ff0d5"],
+"name": "Environment"
+}
+},
+"conditions": {
+"023d7f8c-413a-4643-8408-af6501c2cdff": {
+"output": "6cb7b540-1bb4-4eac-88ae-bfd8e7703013",
+"script": "have_potion"
+},
+"462433eb-bc14-49df-af13-91c19e63b65c": {
+"output": "a8cf1f72-a10e-44ca-b026-86895f7bcc40",
+"script": "wanda_health &lt; 40"
+},
+"48d4095c-c6d2-4009-b68e-9ce92a61edd1": {
+"output": "b7c621dc-9c04-4e58-b59a-395521ecb171",
+"script": null
+},
+"66acc3a7-454a-43db-a923-1b0d3cb17805": {
+"output": "57572c19-ca11-4223-bdb7-718971ef7951",
+"script": "not visits(<span class=\"mention-element mention\" data-id=\"d852a577-bd1f-44cf-8187-77a86f97baef\" data-label=\"Get potion\" data-type=\"element\">get_potion</span>)"
+},
+"d24a6cbe-85fb-4059-8867-fa8ba0af6aa0": {
+"output": "bc517d71-2899-4d3c-9c92-e72ca2b00174",
+"script": null
+},
+"d9854a9f-617f-4d0f-8ccf-42f2e0419c36": {
+"output": "e2c7e296-ab05-49f8-9247-e9a3b33dd6e9",
+"script": "wanda_health &gt;= 40"
+},
+"f8e12e95-43b7-4d42-9844-5402665b24ef": {
+"output": "2b9d43d7-6eee-42d0-82ae-dcd08a897130",
+"script": "visits(<span class=\"mention-element mention\" data-id=\"045ab2b6-6d77-43f7-a7b4-e275f41667c3\" data-label=\"Giving healing potion\" data-type=\"element\">giving_healing_potion</span>)"
+}
+},
+"connections": {
+"008e74f9-5c23-4111-838e-44b4121db526": {
+"label": "<p>[Back]</p>",
+"sourceType": "elements",
+"sourceid": "3893f5e9-d85e-4e5b-9423-e02ac03eb34f",
+"targetType": "jumpers",
+"targetid": "49be178c-30a9-4160-b065-1a72e3626a65",
+"theme": "brown",
+"type": "Straight"
+},
+"02dfbe78-ae86-4525-8af9-51a54d58193b": {
+"label": "<p>Examine her.</p>",
+"sourceType": "elements",
+"sourceid": "5265ceac-f13f-47fc-a02c-6eda7eea6b90",
+"targetType": "branches",
+"targetid": "5d6f37af-3b82-484b-a3c9-5802db1c575f",
+"theme": "default",
+"type": "Straight"
+},
+"0879ddb5-e1a2-4b95-a28c-d4df8df845e9": {
+"label": null,
+"sourceType": "elements",
+"sourceid": "ddc209cc-7832-4ff6-ae1f-4eea592d07d4",
+"targetType": "branches",
+"targetid": "bce80b17-0165-41a2-a29d-e814f6e9f110",
+"theme": "default",
+"type": "Straight"
+},
+"27fb996a-efe4-45fd-adae-7e63827b2ce5": {
+"label": null,
+"sourceType": "elements",
+"sourceid": "e7204f2d-842a-4ab4-8aa6-349e441e4935",
+"targetType": "jumpers",
+"targetid": "2480e3fc-bfe3-49a6-a32d-a5ea4c9c5a22",
+"theme": "pink",
+"type": "Straight"
+},
+"2b9d43d7-6eee-42d0-82ae-dcd08a897130": {
+"label": null,
+"sourceType": "conditions",
+"sourceid": "f8e12e95-43b7-4d42-9844-5402665b24ef",
+"targetType": "elements",
+"targetid": "62d0eaea-ccd4-4020-8bf9-7b00c7397684",
+"theme": "moss",
+"type": "Straight"
+},
+"325f3cda-c786-4259-b95b-e09a399c58fd": {
+"label": "<p>[Back]</p>",
+"sourceType": "elements",
+"sourceid": "50ba3de5-f14b-4703-9e2e-c0b2ccb9d407",
+"targetType": "jumpers",
+"targetid": "7a7524ef-e636-4baa-99ae-582efdd902b0",
+"theme": "gold",
+"type": "Straight"
+},
+"3b190ec6-1525-484f-aa4f-5422ff176288": {
+"label": "<p>[Back]</p>",
+"sourceType": "elements",
+"sourceid": "62d0eaea-ccd4-4020-8bf9-7b00c7397684",
+"targetType": "jumpers",
+"targetid": "28e3009a-e164-4679-92c3-977615b1eb4b",
+"theme": "default",
+"type": "Straight"
+},
+"4a58bb7e-43b4-4cc9-9a84-9c05618ad8ac": {
+"label": "<p>\"Hang on. I'll be back with help.\"</p>",
+"sourceFace": "right",
+"sourceType": "elements",
+"sourceid": "5265ceac-f13f-47fc-a02c-6eda7eea6b90",
+"targetFace": "left",
+"targetType": "branches",
+"targetid": "c995129b-2d4e-4c01-8f3d-ad66914ee2a1",
+"theme": "gold",
+"type": "Straight"
+},
+"4fd2cc78-c8ff-48fd-bcbc-b0e8c42f857d": {
+"label": null,
+"sourceType": "elements",
+"sourceid": "61b54b64-7376-4b5e-ae0d-cc1b390e16b7",
+"targetType": "elements",
+"targetid": "50ba3de5-f14b-4703-9e2e-c0b2ccb9d407",
+"theme": "gold",
+"type": "Straight"
+},
+"542a8cf5-54fe-42ea-8b23-694dee1106da": {
+"label": null,
+"sourceType": "elements",
+"sourceid": "4d7d2516-68e0-450c-a580-65c0b2616965",
+"targetType": "jumpers",
+"targetid": "895bcae0-a11a-4d57-8cdc-82d8f95f75a6",
+"theme": "gold",
+"type": "Straight"
+},
+"55f77cc3-8c0f-4ff5-b020-2098736aef4d": {
+"label": "<p>[Back]</p>",
+"sourceType": "elements",
+"sourceid": "dbbbec36-4a9c-4cad-8533-c9f421a5093d",
+"targetType": "jumpers",
+"targetid": "d7f26011-d6d6-4c92-aa3b-3a074ff647aa",
+"theme": "moss",
+"type": "Straight"
+},
+"57572c19-ca11-4223-bdb7-718971ef7951": {
+"label": "<p>Ask for help</p>",
+"sourceType": "conditions",
+"sourceid": "66acc3a7-454a-43db-a923-1b0d3cb17805",
+"targetFace": "left",
+"targetType": "elements",
+"targetid": "540d5fc7-aa78-4b1a-8c11-bc2d4dc24ba9",
+"theme": "moss",
+"type": "Straight"
+},
+"60df4786-8a65-46ee-a3e9-1df36a5e1f39": {
+"label": "<p>\"I don't know what to do!\"</p>",
+"sourceType": "elements",
+"sourceid": "63bee155-1348-4b82-a52d-24c96143c9db",
+"targetType": "elements",
+"targetid": "be67a949-dd00-4460-98c9-45067f0d331f",
+"theme": "gold",
+"type": "Straight"
+},
+"62a9e84c-9652-4636-a796-73a75488bb79": {
+"label": null,
+"sourceType": "elements",
+"sourceid": "63bee155-1348-4b82-a52d-24c96143c9db",
+"targetFace": "left",
+"targetType": "branches",
+"targetid": "b16dc6eb-d3f3-40da-b00a-3c71b17ed257",
+"theme": "moss",
+"type": "Straight"
+},
+"6cb7b540-1bb4-4eac-88ae-bfd8e7703013": {
+"label": "<p>Give her the potion.</p>",
+"sourceType": "conditions",
+"sourceid": "023d7f8c-413a-4643-8408-af6501c2cdff",
+"targetFace": "left",
+"targetType": "elements",
+"targetid": "045ab2b6-6d77-43f7-a7b4-e275f41667c3",
+"theme": "moss",
+"type": "Straight"
+},
+"8a89cabd-7542-48db-b501-3c0019145989": {
+"label": "<p>\"I am glad I helped.\"</p>",
+"sourceType": "elements",
+"sourceid": "5265ceac-f13f-47fc-a02c-6eda7eea6b90",
+"targetFace": "left",
+"targetType": "branches",
+"targetid": "0d845415-33d5-4486-9514-32b88e17e6b2",
+"theme": "moss",
+"type": "Straight"
+},
+"90872a7c-0f63-472b-8330-a6b14d824aeb": {
+"label": null,
+"sourceType": "elements",
+"sourceid": "540d5fc7-aa78-4b1a-8c11-bc2d4dc24ba9",
+"targetFace": "left",
+"targetType": "elements",
+"targetid": "d852a577-bd1f-44cf-8187-77a86f97baef",
+"theme": "moss",
+"type": "Straight"
+},
+"929b7bfd-ff9a-471f-ba1b-a5ace253c5f4": {
+"label": "<p>[Back]</p>",
+"sourceType": "elements",
+"sourceid": "a690068b-49db-44ee-94ca-ebf4627c8141",
+"targetType": "jumpers",
+"targetid": "28e3009a-e164-4679-92c3-977615b1eb4b",
+"theme": "default",
+"type": "Straight"
+},
+"9327955d-269b-4c52-8c93-3172f7b4f721": {
+"label": null,
+"sourceType": "elements",
+"sourceid": "045ab2b6-6d77-43f7-a7b4-e275f41667c3",
+"targetType": "elements",
+"targetid": "dbbbec36-4a9c-4cad-8533-c9f421a5093d",
+"theme": "moss",
+"type": "Straight"
+},
+"993d8d9a-ff84-48eb-b531-7b9b2d37cb91": {
+"label": "<p>\"I'm sorry, wrong turn.\"</p>",
+"sourceType": "elements",
+"sourceid": "ddc209cc-7832-4ff6-ae1f-4eea592d07d4",
+"targetType": "elements",
+"targetid": "9c3607e5-4fb7-49db-ac8d-ccd7a1bf6d56",
+"theme": "brown",
+"type": "Straight"
+},
+"9b1224a4-5546-4f81-96c7-a1865c618291": {
+"label": "<p>[Back]</p>",
+"sourceType": "elements",
+"sourceid": "d852a577-bd1f-44cf-8187-77a86f97baef",
+"targetType": "jumpers",
+"targetid": "49be178c-30a9-4160-b065-1a72e3626a65",
+"theme": "moss",
+"type": "Straight"
+},
+"a89eea4c-0498-419e-9b21-1ce8ddd706bf": {
+"label": "<p>Go to <span class=\"mention-component mention\" data-id=\"82820a96-708d-4a05-b2aa-21e8d582d5de\" data-label=\"Healer\" data-type=\"component\">Healer</span>.</p>",
+"sourceType": "elements",
+"sourceid": "5bb43181-eebd-40b8-9561-2e58223c6016",
+"targetType": "jumpers",
+"targetid": "ae78f3a6-dea3-45a5-935f-bbb45825043e",
+"theme": "blue",
+"type": "Bezier"
+},
+"a8cf1f72-a10e-44ca-b026-86895f7bcc40": {
+"label": null,
+"sourceType": "conditions",
+"sourceid": "462433eb-bc14-49df-af13-91c19e63b65c",
+"targetType": "elements",
+"targetid": "61b54b64-7376-4b5e-ae0d-cc1b390e16b7",
+"theme": "gold",
+"type": "Straight"
+},
+"b7c621dc-9c04-4e58-b59a-395521ecb171": {
+"label": null,
+"sourceType": "conditions",
+"sourceid": "48d4095c-c6d2-4009-b68e-9ce92a61edd1",
+"targetFace": "left",
+"targetType": "elements",
+"targetid": "63bee155-1348-4b82-a52d-24c96143c9db",
+"theme": "gold",
+"type": "Straight"
+},
+"bc517d71-2899-4d3c-9c92-e72ca2b00174": {
+"label": "<p>\"Can you give me another potion?\"</p>",
+"sourceType": "conditions",
+"sourceid": "d24a6cbe-85fb-4059-8867-fa8ba0af6aa0",
+"targetType": "elements",
+"targetid": "a8965b1b-4841-427e-8cf5-d8eda2f59bf2",
+"theme": "brown",
+"type": "Straight"
+},
+"c6932ce2-0e49-4f25-8595-6432208338c2": {
+"label": null,
+"sourceType": "elements",
+"sourceid": "9c3607e5-4fb7-49db-ac8d-ccd7a1bf6d56",
+"targetType": "elements",
+"targetid": "3893f5e9-d85e-4e5b-9423-e02ac03eb34f",
+"theme": "brown",
+"type": "Straight"
+},
+"cb3312b7-33b5-43fa-97c9-4f0b7eced680": {
+"label": "<p>[Back]</p>",
+"sourceType": "elements",
+"sourceid": "e14fa106-d418-4935-ab44-0de013995605",
+"targetType": "jumpers",
+"targetid": "49be178c-30a9-4160-b065-1a72e3626a65",
+"theme": "brown",
+"type": "Straight"
+},
+"cff4ab38-b38b-4aca-981e-c1e04561421b": {
+"label": null,
+"sourceType": "elements",
+"sourceid": "a8965b1b-4841-427e-8cf5-d8eda2f59bf2",
+"targetType": "elements",
+"targetid": "e14fa106-d418-4935-ab44-0de013995605",
+"theme": "brown",
+"type": "Straight"
+},
+"d334c938-ed9e-4869-8307-1dc3a2a1149f": {
+"label": null,
+"sourceType": "elements",
+"sourceid": "be67a949-dd00-4460-98c9-45067f0d331f",
+"targetType": "elements",
+"targetid": "4d7d2516-68e0-450c-a580-65c0b2616965",
+"theme": "gold",
+"type": "Straight"
+},
+"d6934b95-7e92-4323-bdd5-35d6a70683fa": {
+"label": "<p>Go to <span class=\"mention-component mention\" data-id=\"647349ca-9ebb-4d5f-b81e-500761ec1c5a\" data-label=\"Wanda Elandor\" data-type=\"component\">Wanda Elandor</span>.</p>",
+"sourceType": "elements",
+"sourceid": "5bb43181-eebd-40b8-9561-2e58223c6016",
+"targetType": "jumpers",
+"targetid": "2480e3fc-bfe3-49a6-a32d-a5ea4c9c5a22",
+"theme": "blue",
+"type": "Bezier"
+},
+"da4e52f1-34f6-4cd8-90de-abf7c24c648a": {
+"label": null,
+"sourceType": "elements",
+"sourceid": "9cde645d-6e9e-492b-9103-a65b60dcfd9a",
+"targetType": "jumpers",
+"targetid": "ae78f3a6-dea3-45a5-935f-bbb45825043e",
+"theme": "pink",
+"type": "Straight"
+},
+"e2c7e296-ab05-49f8-9247-e9a3b33dd6e9": {
+"label": null,
+"sourceType": "conditions",
+"sourceid": "d9854a9f-617f-4d0f-8ccf-42f2e0419c36",
+"targetType": "elements",
+"targetid": "a690068b-49db-44ee-94ca-ebf4627c8141",
+"theme": "moss",
+"type": "Straight"
+}
+},
+"cover": {
+"file": "game-engine-cover.png",
+"type": "template-image"
+},
+"elements": {
+"045ab2b6-6d77-43f7-a7b4-e275f41667c3": {
+"autoHeight": true,
+"components": ["647349ca-9ebb-4d5f-b81e-500761ec1c5a"],
+"content": "<pre><code>wanda_health += 50</code></pre><pre><code>have_potion = false</code></pre><p><em>[Wanda gulps down the potion.]</em></p>",
+"outputs": ["9327955d-269b-4c52-8c93-3172f7b4f721"],
+"theme": "moss",
+"title": "<p>Giving healing potion</p>",
+"x": 12380.0,
+"y": 10600.0
+},
+"3893f5e9-d85e-4e5b-9423-e02ac03eb34f": {
+"attributes": ["4adffe26-5221-4dcd-b611-80f372469a13"],
+"autoHeight": true,
+"components": ["82820a96-708d-4a05-b2aa-21e8d582d5de"],
+"content": "<p>No worries. Don't be a stranger.</p>",
+"outputs": ["008e74f9-5c23-4111-838e-44b4121db526"],
+"theme": "brown",
+"title": "<p>wrong turn no worries</p>",
+"x": 11480.0,
+"y": 11200.0
+},
+"4d7d2516-68e0-450c-a580-65c0b2616965": {
+"autoHeight": true,
+"components": ["647349ca-9ebb-4d5f-b81e-500761ec1c5a"],
+"content": "<p>The healer.... potion....</p>",
+"outputs": ["542a8cf5-54fe-42ea-8b23-694dee1106da"],
+"theme": "gold",
+"title": "<p>No potion to give</p>",
+"x": 12380.0,
+"y": 10920.0
+},
+"50ba3de5-f14b-4703-9e2e-c0b2ccb9d407": {
+"attributes": ["1ac75bb2-05e9-46e4-8278-74550fb55f1d"],
+"autoHeight": true,
+"components": ["647349ca-9ebb-4d5f-b81e-500761ec1c5a"],
+"content": "<p>Please... Be quick...</p>",
+"outputs": ["325f3cda-c786-4259-b95b-e09a399c58fd"],
+"theme": "gold",
+"title": "<p>Please, quickly</p>",
+"x": 11660.0,
+"y": 11460.0
+},
+"5265ceac-f13f-47fc-a02c-6eda7eea6b90": {
+"attributes": ["11006864-6f66-4c2c-a3b7-d3fae8febc42"],
+"autoHeight": false,
+"components": ["647349ca-9ebb-4d5f-b81e-500761ec1c5a"],
+"content": "<pre><code>if wanda_health < 40</code></pre><p>Help me, Stranger.... I am wounded...</p><pre><code>else</code></pre><p>Thank you for saving my life!</p><pre><code>endif</code></pre>",
+"outputs": ["8a89cabd-7542-48db-b501-3c0019145989", "02dfbe78-ae86-4525-8af9-51a54d58193b", "4a58bb7e-43b4-4cc9-9a84-9c05618ad8ac"],
+"theme": "cyan",
+"title": "<p>Start</p>",
+"x": 9720.0,
+"y": 10620.0
+},
+"540d5fc7-aa78-4b1a-8c11-bc2d4dc24ba9": {
+"autoHeight": true,
+"components": ["3846c37c-07a1-4c04-98e2-26cd026295d1"],
+"content": "<p>There's a girl by the road in grave danger. Do you have anything to heal her?</p>",
+"outputs": ["90872a7c-0f63-472b-8330-a6b14d824aeb"],
+"theme": "moss",
+"title": "<p>Ask for help (successfully)</p>",
+"x": 11120.0,
+"y": 10340.0
+},
+"5bb43181-eebd-40b8-9561-2e58223c6016": {
+"autoHeight": true,
+"components": [],
+"content": "<p><strong>Setting</strong>:<br>• a forest</p><p><strong>Player</strong>:<br>• <span class=\"mention-component mention\" data-id=\"3846c37c-07a1-4c04-98e2-26cd026295d1\" data-label=\"Drake Miles\" data-type=\"component\">Drake Miles</span></p><p><strong>NPCs</strong>:<br>• <span class=\"mention-component mention\" data-id=\"647349ca-9ebb-4d5f-b81e-500761ec1c5a\" data-label=\"Wanda Elandor\" data-type=\"component\">Wanda Elandor</span><br>• <span class=\"mention-component mention\" data-id=\"82820a96-708d-4a05-b2aa-21e8d582d5de\" data-label=\"Healer\" data-type=\"component\">Healer</span></p>",
+"outputs": ["d6934b95-7e92-4323-bdd5-35d6a70683fa", "a89eea4c-0498-419e-9b21-1ce8ddd706bf"],
+"theme": "blue",
+"title": "<p>Play Mode Start</p>",
+"x": 9760.0,
+"y": 10460.0
+},
+"61b54b64-7376-4b5e-ae0d-cc1b390e16b7": {
+"attributes": [],
+"autoHeight": true,
+"components": ["3846c37c-07a1-4c04-98e2-26cd026295d1"],
+"content": "<p>Hang on. I'll be back with help!</p>",
+"outputs": ["4fd2cc78-c8ff-48fd-bcbc-b0e8c42f857d"],
+"theme": "gold",
+"title": "<p>I'll be back</p>",
+"x": 11280.0,
+"y": 11460.0
+},
+"62d0eaea-ccd4-4020-8bf9-7b00c7397684": {
+"attributes": ["978e009a-3a8d-4c7a-b669-d2a3b50c1fa8"],
+"autoHeight": true,
+"components": ["3846c37c-07a1-4c04-98e2-26cd026295d1"],
+"content": "<p>I'm glad I helped.</p>",
+"outputs": ["3b190ec6-1525-484f-aa4f-5422ff176288"],
+"theme": "moss",
+"title": "<p>Helped successfully</p>",
+"x": 11300.0,
+"y": 10340.0
+},
+"63bee155-1348-4b82-a52d-24c96143c9db": {
+"autoHeight": true,
+"components": ["3846c37c-07a1-4c04-98e2-26cd026295d1"],
+"content": "<p>[She looks weak... What should I do?]</p>",
+"outputs": ["62a9e84c-9652-4636-a796-73a75488bb79", "60df4786-8a65-46ee-a3e9-1df36a5e1f39"],
+"theme": "gold",
+"title": "<p>Health bad</p>",
+"x": 11300.0,
+"y": 10780.0
+},
+"9c3607e5-4fb7-49db-ac8d-ccd7a1bf6d56": {
+"autoHeight": true,
+"components": ["3846c37c-07a1-4c04-98e2-26cd026295d1"],
+"content": "<p>I'm sorry, I must have taken a wrong turn.</p>",
+"outputs": ["c6932ce2-0e49-4f25-8595-6432208338c2"],
+"theme": "brown",
+"title": "<p>oops wrong turn</p>",
+"x": 11120.0,
+"y": 11200.0
+},
+"9cde645d-6e9e-492b-9103-a65b60dcfd9a": {
+"autoHeight": true,
+"components": ["82820a96-708d-4a05-b2aa-21e8d582d5de"],
+"content": "<p><em>This element must not be rendered. It only points to the next element (via jumper), where the dialogue begins.</em></p>",
+"outputs": ["da4e52f1-34f6-4cd8-90de-abf7c24c648a"],
+"theme": "pink",
+"title": "<p><span class=\"mention-component mention\" data-id=\"82820a96-708d-4a05-b2aa-21e8d582d5de\" data-label=\"Healer\" data-type=\"component\">Healer</span> starting element</p>",
+"x": 10840.0,
+"y": 10620.0
+},
+"a690068b-49db-44ee-94ca-ebf4627c8141": {
+"attributes": ["8db5417a-26ff-4c99-b8de-f7e3f911608b"],
+"autoHeight": true,
+"components": ["3846c37c-07a1-4c04-98e2-26cd026295d1"],
+"content": "<p>[She's strong now.]</p>",
+"outputs": ["929b7bfd-ff9a-471f-ba1b-a5ace253c5f4"],
+"theme": "moss",
+"title": "<p>Health good</p>",
+"x": 11300.0,
+"y": 10560.0
+},
+"a8965b1b-4841-427e-8cf5-d8eda2f59bf2": {
+"autoHeight": true,
+"components": ["3846c37c-07a1-4c04-98e2-26cd026295d1"],
+"content": "<p>Hi again. Could you perhaps give me another potion?</p>",
+"outputs": ["cff4ab38-b38b-4aca-981e-c1e04561421b"],
+"theme": "brown",
+"title": "<p>Ask for help (successfully)</p>",
+"x": 11120.0,
+"y": 10960.0
+},
+"be67a949-dd00-4460-98c9-45067f0d331f": {
+"autoHeight": true,
+"components": ["3846c37c-07a1-4c04-98e2-26cd026295d1"],
+"content": "<p>I don't know what to do!</p>",
+"outputs": ["d334c938-ed9e-4869-8307-1dc3a2a1149f"],
+"theme": "gold",
+"title": "<p>Don't know what to do</p>",
+"x": 12020.0,
+"y": 10920.0
+},
+"d852a577-bd1f-44cf-8187-77a86f97baef": {
+"attributes": ["45a15656-47e5-463a-a3ed-c508965e6010"],
+"autoHeight": true,
+"components": ["82820a96-708d-4a05-b2aa-21e8d582d5de"],
+"content": "<pre><code>have_potion = true</code></pre><p>Oh my! But of course! Here, take this healing potion.</p>",
+"outputs": ["9b1224a4-5546-4f81-96c7-a1865c618291"],
+"theme": "moss",
+"title": "<p>Get potion</p>",
+"x": 11480.0,
+"y": 10340.0
+},
+"dbbbec36-4a9c-4cad-8533-c9f421a5093d": {
+"attributes": ["9cd31ce5-e6b2-4723-9b67-7c2a051b6a6a"],
+"autoHeight": true,
+"components": ["647349ca-9ebb-4d5f-b81e-500761ec1c5a"],
+"content": "<p>Thank you, stranger! I feel better already.</p>",
+"outputs": ["55f77cc3-8c0f-4ff5-b020-2098736aef4d"],
+"theme": "moss",
+"title": "<p>Got healing potion</p>",
+"x": 12800.0,
+"y": 10540.0
+},
+"ddc209cc-7832-4ff6-ae1f-4eea592d07d4": {
+"attributes": ["955b9b0d-372a-45d9-a68f-33ddfebf2bf6"],
+"autoHeight": true,
+"components": ["82820a96-708d-4a05-b2aa-21e8d582d5de"],
+"content": "<p>Greetings traveller, may I help you?</p>",
+"outputs": ["0879ddb5-e1a2-4b95-a28c-d4df8df845e9", "993d8d9a-ff84-48eb-b531-7b9b2d37cb91"],
+"theme": "cyan",
+"title": "<p>Start</p>",
+"x": 10180.0,
+"y": 10860.0
+},
+"e14fa106-d418-4935-ab44-0de013995605": {
+"attributes": ["ce8c0b5f-c6bc-410f-8f23-7831c2f5a4c4"],
+"autoHeight": true,
+"components": ["82820a96-708d-4a05-b2aa-21e8d582d5de"],
+"content": "<p>I only had one vial of it, I'm afraid.</p>",
+"outputs": ["cb3312b7-33b5-43fa-97c9-4f0b7eced680"],
+"theme": "brown",
+"title": "<p>Ask for help (already have)</p>",
+"x": 11480.0,
+"y": 10960.0
+},
+"e7204f2d-842a-4ab4-8aa6-349e441e4935": {
+"autoHeight": true,
+"components": ["647349ca-9ebb-4d5f-b81e-500761ec1c5a"],
+"content": "<p><em>This element must not be rendered. It only points to the next element (via jumper), where the dialogue begins.</em></p>",
+"outputs": ["27fb996a-efe4-45fd-adae-7e63827b2ce5"],
+"theme": "pink",
+"title": "<p><span class=\"mention-component mention\" data-id=\"647349ca-9ebb-4d5f-b81e-500761ec1c5a\" data-label=\"Wanda Elandor\" data-type=\"component\">Wanda Elandor</span> starting element</p>",
+"x": 10840.0,
+"y": 10220.0
+}
+},
+"jumpers": {
+"2480e3fc-bfe3-49a6-a32d-a5ea4c9c5a22": {
+"elementId": "5265ceac-f13f-47fc-a02c-6eda7eea6b90",
+"x": 10840.0,
+"y": 10040.0
+},
+"28e3009a-e164-4679-92c3-977615b1eb4b": {
+"elementId": "5bb43181-eebd-40b8-9561-2e58223c6016",
+"x": 11920.0,
+"y": 10500.0
+},
+"49be178c-30a9-4160-b065-1a72e3626a65": {
+"elementId": "5bb43181-eebd-40b8-9561-2e58223c6016",
+"x": 12340.0,
+"y": 10820.0
+},
+"7a7524ef-e636-4baa-99ae-582efdd902b0": {
+"elementId": "5bb43181-eebd-40b8-9561-2e58223c6016",
+"x": 12360.0,
+"y": 11500.0
+},
+"895bcae0-a11a-4d57-8cdc-82d8f95f75a6": {
+"elementId": "61b54b64-7376-4b5e-ae0d-cc1b390e16b7",
+"x": 12880.0,
+"y": 10980.0
+},
+"ae78f3a6-dea3-45a5-935f-bbb45825043e": {
+"elementId": "ddc209cc-7832-4ff6-ae1f-4eea592d07d4",
+"x": 10840.0,
+"y": 10960.0
+},
+"d7f26011-d6d6-4c92-aa3b-3a074ff647aa": {
+"elementId": "5bb43181-eebd-40b8-9561-2e58223c6016",
+"x": 13380.0,
+"y": 10600.0
+}
+},
+"name": "Game Engine Example",
+"notes": {
+"034133c4-42d2-45af-9db6-351eadfd5a1e": {
+"autoHeight": true,
+"content": "<p>We've given dialogue starting elements a custom element attribute:</p><p><strong>tag: dialogue_start</strong></p><p>This way, the game engine knows where to look for each NPC's dialogue start.</p><p><em>We've used this solution in the Unreal Engine demo game.</em></p><p>Right click the element and choose \"Properties,\" to see it.</p>",
+"theme": "cyan",
+"x": 10180.0,
+"y": 10540.0
+},
+"3701967c-5c90-4474-8838-39d634d1ebf7": {
+"autoHeight": true,
+"content": "<p>Just as with dialogue starts, we've given <strong>dialogue ending elements</strong> a custom element attribute:</p><p><strong>tag: dialogue_end</strong></p><p>This way, the game engine knows not to follow the [Back] connections, which are for Arcweave's Play Mode playability only.</p><p>Right click these elements and choose \"Properties,\" to see the tag attribute.</p>",
+"theme": "cyan",
+"x": 11480.0,
+"y": 10620.0
+},
+"43cf8efd-f69f-421b-b65e-227b0b29a37f": {
+"autoHeight": false,
+"content": "<p>These are the elements that the game engine must look for:</p><p>1. They are in the <strong>Starting Board</strong> (which has custom id: <strong>starting_dialogue_elements</strong>—see board's properties).<strong><br></strong>2. They have the relevant NPC's <strong>character component</strong> attached.</p><p><em>We are using this solution in the Godot &amp; Unity demo games.</em></p>",
+"theme": "pink",
+"x": 10700.0,
+"y": 10460.0
+},
+"94049948-836b-436d-9105-61a87595fb35": {
+"autoHeight": true,
+"content": "<p>Just as with dialogue starts, we've given <strong>dialogue ending elements</strong> a custom element attribute:</p><p><strong>tag: dialogue_end</strong></p><p>This way, the game engine knows not to follow the [Back] connections, which are for Arcweave's Play Mode playability only.</p><p>Right click these elements and choose \"Properties,\" to see the tag attribute.</p>",
+"theme": "moss",
+"x": 11300.0,
+"y": 10040.0
+},
+"d974242a-a65d-4bd6-8670-24c6b02a487f": {
+"autoHeight": true,
+"content": "<p>We've given dialogue starting elements a custom element attribute:</p><p><strong>tag: dialogue_start</strong></p><p>This way, the game engine knows where to look for each NPC's dialogue start.</p><p><em>We've used this solution in the Unreal Engine demo game.</em></p><p>Right click the element and choose \"Properties,\" to see it.</p>",
+"theme": "cyan",
+"x": 9720.0,
+"y": 10300.0
+},
+"efda66b1-9841-4a02-a4d2-0d782430726b": {
+"autoHeight": true,
+"content": "<p>This is the starting element for Arcweave's Play Mode. The game engine should ignore this.</p>",
+"theme": "blue",
+"x": 9760.0,
+"y": 10340.0
+}
+},
+"startingElement": "5bb43181-eebd-40b8-9561-2e58223c6016",
+"variables": {
+"6e25dd6b-e976-4a80-afc5-5ce2cbcc8228": {
+"name": "have_potion",
+"type": "boolean",
+"value": false
+},
+"747d0495-341f-42b2-8788-b47dace22bf8": {
+"children": ["990d6321-43cb-430b-84bd-6b48c574c489", "ddee7af7-0fc3-474d-ad6a-4938a330506a", "6e25dd6b-e976-4a80-afc5-5ce2cbcc8228"],
+"root": true
+},
+"990d6321-43cb-430b-84bd-6b48c574c489": {
+"name": "healer_health",
+"type": "integer",
+"value": 50.0
+},
+"ddee7af7-0fc3-474d-ad6a-4938a330506a": {
+"name": "wanda_health",
+"type": "integer",
+"value": 20.0
+}
+}
+}
