@@ -502,14 +502,14 @@ theme_override_constants/h_separation = 8
 columns = 2
 
 [node name="APILabel" type="Label" parent="UI/Settings/GridContainer"]
-custom_minimum_size = Vector2(256, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-tooltip_text = "Insert API Token of the Arcweave project's owner."
+tooltip_text = "Insert API Token of Arcweave project's owner."
 mouse_filter = 1
 text = "API Token:"
 
 [node name="APILineEdit" type="LineEdit" parent="UI/Settings/GridContainer"]
-custom_minimum_size = Vector2(712, 0)
+custom_minimum_size = Vector2(760, 0)
 layout_mode = 2
 
 [node name="HashLabel" type="Label" parent="UI/Settings/GridContainer"]
@@ -523,7 +523,8 @@ layout_mode = 2
 
 [node name="ProjectNameKeyLabel" type="Label" parent="UI/Settings/GridContainer"]
 layout_mode = 2
-tooltip_text = "Insert Arcweave project's hash."
+tooltip_text = "Project name from Saved (if any)
+or ArcweaveNode's ArcweaveAsset."
 mouse_filter = 1
 text = "Project Name:"
 
@@ -532,7 +533,6 @@ layout_mode = 2
 tooltip_text = "Insert Arcweave project's hash."
 mouse_filter = 1
 theme_override_fonts/font = ExtResource("7_aa1p1")
-text = "---"
 
 [node name="DataButtons" type="HBoxContainer" parent="UI/Settings"]
 layout_mode = 0
@@ -545,15 +545,17 @@ alignment = 1
 [node name="FetchButton" type="Button" parent="UI/Settings/DataButtons"]
 custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
-tooltip_text = "Fetch Arcweave data using the displayed API Token and Project Hash."
+tooltip_text = "Fetch Arcweave data using
+displayed API Token and Project Hash."
 text = "FETCH Project Data"
 
 [node name="SaveAPIButton" type="Button" parent="UI/Settings/DataButtons"]
 custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
-tooltip_text = "Save displayed API Token
-& Project Hash to local drive."
-text = "SAVE API Token & Hash"
+tooltip_text = "Save displayed API Token, Project Hash,
+and Project Name to local drive."
+disabled = true
+text = "SAVE Project Info"
 
 [node name="SettingsKeys" type="HBoxContainer" parent="UI/Settings"]
 layout_mode = 0
@@ -595,7 +597,8 @@ alignment = 1
 [node name="RestartButton" type="Button" parent="UI/Settings/PlayButtons"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-tooltip_text = "Restart the game."
+tooltip_text = "Restart the game.
+(Does NOT fetch.)"
 text = "RESTART"
 
 [node name="PlayButton2" type="Button" parent="UI/Settings/PlayButtons"]
@@ -607,7 +610,8 @@ text = "PLAY"
 [node name="QuitButton2" type="Button" parent="UI/Settings/PlayButtons"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-tooltip_text = "Quit the game."
+tooltip_text = "Leave this demo, inspired
+and energised!"
 text = "QUIT"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="UI/Settings"]
@@ -719,6 +723,8 @@ ArcweaveAsset = ExtResource("17_a20fk")
 
 [connection signal="npc_approached" from="Characters/Player" to="." method="_on_player_npc_approached"]
 [connection signal="npc_left" from="Characters/Player" to="." method="_on_player_npc_left"]
+[connection signal="text_changed" from="UI/Settings/GridContainer/APILineEdit" to="." method="_on_api_line_edit_text_changed"]
+[connection signal="text_changed" from="UI/Settings/GridContainer/HashLineEdit" to="." method="_on_hash_line_edit_text_changed"]
 [connection signal="pressed" from="UI/Settings/DataButtons/FetchButton" to="." method="_on_fetch_button_pressed"]
 [connection signal="pressed" from="UI/Settings/DataButtons/SaveAPIButton" to="." method="_on_save_api_button_pressed"]
 [connection signal="pressed" from="UI/Settings/PlayButtons/RestartButton" to="." method="_on_restart_button_pressed"]

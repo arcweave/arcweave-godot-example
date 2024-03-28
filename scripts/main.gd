@@ -3,7 +3,7 @@ extends Node3D
 enum GameItems { POTION, SCROLL } # SCROLL is an extra item to experiment with.
 enum Weather { RAIN, CLEAR } # Refers to Arcweave project's "Environment" component.
 
-const SAVE_PATH : String = "user://api_hash.sav" # Saves API & Hash locally.
+const SAVE_PATH : String = "user://project_info.sav" # Saves API key, project hash, and project name locally.
 
 @export var starting_board_name: String = "Starting Board" # Corresponds to Arcweave project's "Starting Board"
 
@@ -24,10 +24,86 @@ var dialogue_state: bool = false
 
 
 func _ready() -> void:
-	display_api_hash()
-	prepare_game()
-	#fetch_data_via_displayed_api() # In case we want to fetch upon game start.
-	turn_on_settings()
+	display_project_info() # From saved file, else from ArcweaveNode's ArcweaveAsset.
+	prepare_game() # Preps sprites & sets starting Arcweave board for dialogues.
+	turn_on_settings() # The Settings Menu.
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	# If player is close to NPC and triggers "talk" action (SPACE/ENTER/LEFT-MOUSE-BUTTON).
+	if current_npc is CharacterBody3D:
+		if event.is_action_pressed("talk"):
+			evaluate_dialogue_input() # Hence, the dialogue begins/continues/ends.
+	# Pressing ESC anytime displays/hides the settings menu.
+	if event.is_action_pressed("toggle_settings"):
+		if settings.visible:
+			turn_on_settings(false)
+			return
+		turn_on_settings()
+
+
+# Returns whether there is a locally saved API/hash file.
+func saved_project_info_file_exists()-> bool:
+	if FileAccess.file_exists(SAVE_PATH):
+		print("Saved file found.")
+		return true
+	print("No saved file found to load.")
+	return false
+
+func arcweave_asset_inspector_has_project_info() -> bool:
+	if arcweave_node.ArcweaveAsset.api_key != "" and arcweave_node.ArcweaveAsset.project_hash != "":
+		print("Non-empty api key and hash found in inspector.")
+		# This doesn't necessarily mean that inspector has valid values for those.
+		return true
+	print("Inspector has empty api key and/or hash.")
+	return false
+
+
+# Checks for existing api, hash, and project name to display;
+# 1. if saved file exists, displays from that;
+# 2. else if inspector has api key & hash, displays from inspector;
+# 3. else displays nothing--and user cannot fetch.
+# Note: this function only displays!
+# * it does NOT assign values to ArcweaveAsset.
+# * it does NOT fetch.
+func display_project_info() -> void:
+	# Since we can only fetch via WebAPI from the exported game, we first
+	# force ArcweaveAsset's receive method to WebAPI:
+	arcweave_node.ArcweaveAsset.receive_method = "WebAPI"
+	var api_field: LineEdit = $UI/Settings/GridContainer/APILineEdit
+	var project_hash_field: LineEdit = $UI/Settings/GridContainer/HashLineEdit
+	var project_name_label: Label = $UI/Settings/GridContainer/ProjectNameValueLabel
+	# Let's first clean those from any previous remains:
+	# Display project name from ArcweaveAsset's inspector--will get refreshed if saved file exists:
+	# If there is saved file with api/hash/project_name display from that:
+	if saved_project_info_file_exists():
+		print("Saved API key & project hash found.")
+		var file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.READ)
+		var loaded: Dictionary = file.get_var()
+		file.close()
+		api_field.text = loaded.api_key
+		project_hash_field.text = loaded.project_hash
+		project_name_label.text = loaded.project_name
+		return
+	# Else, display api/hash/project_name from ArcweaveNode's ArcweaveAsset:
+	api_field.text = arcweave_node.ArcweaveAsset.api_key
+	project_hash_field.text = arcweave_node.ArcweaveAsset.project_hash
+	project_name_label.text = arcweave_node.ArcweaveAsset.project_settings.name
+
+
+# Saves displayed API/hash values in local file.
+func save_project_info() -> void:
+	var current_api_key: String = $UI/Settings/GridContainer/APILineEdit.text
+	var current_project_hash: String = $UI/Settings/GridContainer/HashLineEdit.text
+	var current_project_name: String = $UI/Settings/GridContainer/ProjectNameValueLabel.text
+	var saved: Dictionary = {
+		'api_key': current_api_key,
+		'project_hash': current_project_hash,
+		'project_name': current_project_name
+	}
+	var file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	file.store_var(saved) #store_string(JSON.stringify(saveObject, '\t'))
+	file.close()
 
 
 func prepare_game() -> void:
@@ -52,56 +128,6 @@ func prep_weather() -> void:
 		0: player.rain()
 		1: player.rain(false)
 		_: push_aw_error("Unrecognised weather value in Environment component.")
-
-
-# Returns whether there is a locally saved API/hash file.
-func load_file_exists()-> bool:
-	if FileAccess.file_exists(SAVE_PATH):
-		print("Saved file found.")
-		return true
-	print("No saved file found to load.")
-	return false
-
-# Checks for saved api & hash to display; display only!
-# * it does NOT assign values to ArcweaveAsset.
-# * it does NOT fetch.
-# If nothing to load, it displays values from ArcweaveNode's editor.
-func display_api_hash() -> void:
-	if not load_file_exists():
-		display_editor_api_hash() # Load editor's values.
-		return
-	print("Saved API key & project hash found.")
-	var file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.READ)
-	var loaded: Dictionary = file.get_var()
-	file.close()
-	$UI/Settings/GridContainer/APILineEdit.text = loaded.api_key
-	$UI/Settings/GridContainer/HashLineEdit.text = loaded.project_hash
-
-
-# Saves displayed API/hash values in local file.
-func save_api_hash() -> void:
-	var current_api_key: String = $UI/Settings/GridContainer/APILineEdit.text
-	var current_project_hash : String = $UI/Settings/GridContainer/HashLineEdit.text
-	var saved: Dictionary = {
-		'api_key': current_api_key,
-		'project_hash': current_project_hash
-	}
-	var file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-	file.store_var(saved) #store_string(JSON.stringify(saveObject, '\t'))
-	file.close()
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	# If player is close to NPC and triggers "talk" action (SPACE/ENTER/LEFT-MOUSE-BUTTON).
-	if current_npc is CharacterBody3D:
-		if event.is_action_pressed("talk"):
-			evaluate_dialogue_input() # Hence, the dialogue begins/continues/ends.
-	# Pressing ESC anytime displays/hides the settings menu.
-	if event.is_action_pressed("toggle_settings"):
-		if settings.visible:
-			turn_on_settings(false)
-			return
-		turn_on_settings()
 
 
 # Toggles between showing mouse and letting camera pivot.
@@ -406,11 +432,6 @@ func get_health(character_node: CharacterBody3D) -> float:
 	return arcweave_node.Story.Project.GetVariable(character_name + "_health").Value
 
 
-func display_editor_api_hash() -> void:
-	$UI/Settings/GridContainer/APILineEdit.text = arcweave_node.ArcweaveAsset.api_key
-	$UI/Settings/GridContainer/HashLineEdit.text = arcweave_node.ArcweaveAsset.project_hash
-	$UI/Settings/GridContainer/ProjectNameValueLabel.text = arcweave_node.ArcweaveAsset.project_settings.name
-
 
 func _on_option_button_pressed(path: Object) -> void:
 	clear_options()
@@ -434,12 +455,12 @@ func _on_player_npc_left(npc: CharacterBody3D) -> void:
 
 func _on_fetch_button_pressed() -> void:
 	release_all_focus()
-	fetch_data_via_displayed_api()
+	fetch_data_via_displayed_project_info()
 
 
 # Fetches the data based on the values in the LineEdit fields,
 # then updates the story.
-func fetch_data_via_displayed_api() -> void:
+func fetch_data_via_displayed_project_info() -> void:
 	arcweave_node.ArcweaveAsset.api_key = $UI/Settings/GridContainer/APILineEdit.text
 	arcweave_node.ArcweaveAsset.project_hash = $UI/Settings/GridContainer/HashLineEdit.text
 	arcweave_node.UpdateStory() # sending API Request
@@ -456,15 +477,24 @@ func _on_play_button_pressed() -> void:
 
 func _on_save_api_button_pressed() -> void:
 	release_all_focus()
-	save_api_hash() # Saves displayed values in local file
+	save_project_info() # Saves displayed API key, project hash, and project name in local file
 
 
 func _on_arcweave_node_project_updated() -> void:
 	audio_player.play()
 	$UI/UpdateNotification/AnimationPlayer.play("fade_out")
 	$UI/Settings/GridContainer/ProjectNameValueLabel.text = arcweave_node.ArcweaveAsset.project_settings.name
+	$UI/Settings/DataButtons/SaveAPIButton.disabled = false
 	prepare_game()
 
 
 func _on_restart_button_pressed() -> void:
 	get_tree().reload_current_scene()
+
+
+func _on_api_line_edit_text_changed(_new_text: String) -> void:
+	$UI/Settings/DataButtons/SaveAPIButton.disabled = true
+
+
+func _on_hash_line_edit_text_changed(_new_text: String) -> void:
+	$UI/Settings/DataButtons/SaveAPIButton.disabled = true
